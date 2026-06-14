@@ -1,0 +1,14 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 47.005 38.029" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon - healthcare" clip-path="url(#clip0_0_184)">
+<path id="Vector" d="M36.9665 36.9665L45.5483 28.3847C45.8007 28.1323 45.9425 27.7898 45.9425 27.4328V15.6484C45.9425 13.7894 44.4355 12.2824 42.5765 12.2824C40.7176 12.2824 39.2105 13.7894 39.2105 15.6484V25.7464" stroke="var(--stroke-0, #0033A1)" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M36.9665 27.9905L38.8921 26.0649C39.0961 25.8609 39.2105 25.5845 39.2105 25.2964C39.2105 24.8846 38.9778 24.5082 38.6096 24.324L37.6157 23.8272C35.8881 22.9633 33.8011 23.3019 32.4352 24.6678L30.4271 26.6759C29.5853 27.5177 29.1125 28.6591 29.1125 29.8494V36.9664" stroke="var(--stroke-0, #0033A1)" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M10.0385 36.9665L1.45694 28.3847C1.2044 28.1323 1.06254 27.7898 1.06254 27.4328V15.6484C1.06254 13.7894 2.5695 12.2824 4.42854 12.2824C6.28757 12.2824 7.79454 13.7894 7.79454 15.6484V25.7464" stroke="var(--stroke-0, #0033A1)" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M10.0385 27.9905L8.1128 26.0649C7.90897 25.8609 7.79447 25.5845 7.79447 25.2964C7.79447 24.8846 8.02712 24.5082 8.39534 24.324L9.38924 23.8272C11.117 22.9633 13.2039 23.3019 14.5698 24.6678L16.5779 26.6759C17.4196 27.5177 17.8925 28.6591 17.8925 29.8494V36.9664" stroke="var(--stroke-0, #0033A1)" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M27.2427 19.0145H19.7625V13.7785H14.5266V6.2985H19.7625V1.0625H27.2427V6.2985H32.4786V13.7785H27.2427V19.0145Z" stroke="var(--stroke-0, #0033A1)" stroke-width="2.125" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_0_184">
+<rect width="47.005" height="38.029" fill="white"/>
+</clipPath>
+</defs>
+</svg>
