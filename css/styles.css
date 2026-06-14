@@ -373,11 +373,25 @@ nav.scrolled {
   overflow: hidden;
   border: none;
   cursor: pointer;
+  border-radius: 8px;
+  font-family: 'Figtree', sans-serif;
   transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 0;
 }
 
- 
+.btn-park::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
 
 .btn-park:hover::before {
   left: 130%;
@@ -3637,6 +3651,13 @@ footer li:hover {
 
 .formbox .btn-park  {
   width: 40%; float: right;
+}
+
+@media (max-width: 640px) {
+  .formbox .btn-park {
+    width: 100%;
+    float: none;
+  }
 }
 
 .how-much-qualify {

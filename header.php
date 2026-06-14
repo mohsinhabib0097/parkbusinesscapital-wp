@@ -41,7 +41,14 @@
 
 <!-- SVG SPRITE -->
 <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
-  <!-- KEEP YOUR ENTIRE SVG BLOCK HERE EXACTLY AS IS -->
+  <symbol id="icon-hamburger" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="icon-arrow" viewBox="0 0 16 12"><path d="M1 6h13M10 1l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-arrow-sm" viewBox="0 0 14 10"><path d="M1 5h11M9 1l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-chevron" viewBox="0 0 12 8"><path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#0055B8" stroke-width="2" fill="none"/><path d="M8 12l3 3 5-6" stroke="#0055B8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-arrow-left" viewBox="0 0 20 20"><path d="M13 4l-6 6 6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="icon-arrow-right-nav" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
 </svg>
 
 <!-- NAV -->
@@ -55,6 +62,7 @@
       <a href="<?php echo home_url(); ?>" class="nav-link text-[17px] text-black hover:text-park-blue transition-colors">Home</a>
       <a href="<?php echo home_url('/contact'); ?>" class="nav-link text-[17px] text-black hover:text-park-blue transition-colors">Contact</a>
       <a href="<?php echo home_url('/application'); ?>" class="nav-link text-[17px] text-black hover:text-park-blue transition-colors">Apply</a>
+      <a href="<?php echo home_url('/partners'); ?>" class="nav-link text-[17px] text-black hover:text-park-blue transition-colors">Partners</a>
     </div>
 
     <a href="<?php echo home_url('/application'); ?>" class="hidden lg:flex btn-park bg-park-blue text-white font-semibold text-lg px-10 py-2">Let's start</a>
@@ -79,6 +87,7 @@
    <a href="<?php echo home_url(); ?>" class="mobile-nav-link">Home</a>
       <a href="<?php echo home_url('/contact'); ?>" class="mobile-nav-link">Contact</a>
       <a href="<?php echo home_url('/application'); ?>" class="mobile-nav-link">Apply</a>
+      <a href="<?php echo home_url('/partners'); ?>" class="mobile-nav-link">Partners</a>
   </div>
   <div class="p-5 border-t border-gray-100">
     <a href="<?php echo home_url('/application'); ?>" class="btn-park bg-park-blue text-white font-semibold text-lg py-3 px-10 w-full text-center block">Let's start</a>

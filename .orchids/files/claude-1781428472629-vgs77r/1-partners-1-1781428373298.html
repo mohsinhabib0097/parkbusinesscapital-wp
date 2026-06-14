@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Partners & Referrals — Park Business Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1b2c82;
+    --blue:#1e50e0;
+    --blue-dark:#1a44c0;
+    --bg:#f1f0f7;
+    --white:#ffffff;
+    --ink:#2b2b32;
+    --muted:#6c6c7a;
+    --line:#e5e4ef;
+    --soft:#e9e8f4;
+    --radius:14px;
+    --shadow:0 18px 50px rgba(27,44,130,.08);
+    --shadow-sm:0 8px 24px rgba(27,44,130,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{font-family:'Quicksand',sans-serif;letter-spacing:-.5px;}
+  a{text-decoration:none;color:inherit;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 32px;}
+  .eyebrow{
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:13px;
+    letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);
+    margin-bottom:18px;display:inline-block;
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;justify-content:center;
+    font-family:'Quicksand',sans-serif;font-weight:700;font-size:16px;
+    padding:16px 30px;border-radius:10px;cursor:pointer;border:none;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--blue);color:#fff;}
+  .btn-primary:hover{background:var(--blue-dark);transform:translateY(-2px);box-shadow:0 10px 24px rgba(30,80,224,.3);}
+  .btn-ghost{background:transparent;color:var(--navy);border:2px solid var(--soft);}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue);}
+  .btn-white{background:#fff;color:var(--blue);}
+  .btn-white:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.18);}
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:84px;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo .mark{width:38px;height:38px;flex:none;}
+  .logo .name{font-family:'Quicksand',sans-serif;font-weight:700;font-size:24px;color:var(--navy);line-height:1;}
+  .logo .sub{display:block;font-size:9px;letter-spacing:3px;color:var(--blue);font-weight:700;font-family:'Inter';margin-top:2px;}
+  .nav-links{display:flex;align-items:center;gap:38px;}
+  .nav-links a{font-size:17px;color:var(--ink);font-weight:500;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-links a.active{color:var(--blue);font-weight:600;}
+  .nav-cta{padding:13px 30px;}
+  .burger{display:none;background:none;border:none;cursor:pointer;}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;overflow:hidden;padding:70px 0 90px;}
+  .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  .hero h1{font-size:58px;font-weight:700;color:var(--navy);line-height:1.05;margin-bottom:24px;}
+  .hero p.lead{font-size:18px;color:var(--ink);max-width:520px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:22px;}
+  .hero-note{font-size:14px;color:var(--muted);}
+  .circle{position:absolute;border-radius:50%;background:var(--soft);opacity:.6;z-index:0;}
+  .circle.c1{width:230px;height:230px;left:30%;bottom:-40px;}
+  .circle.c2{width:140px;height:140px;left:46%;top:120px;opacity:.5;}
+  .hero-grid{position:relative;z-index:1;}
+
+  .hero-visual{
+    position:relative;width:100%;max-width:480px;aspect-ratio:1/1;margin-left:auto;
+    border-radius:50% 50% 50% 22px / 60% 56% 44% 38%;
+    overflow:hidden;background:var(--navy);box-shadow:var(--shadow);
+  }
+  .hero-visual img{width:100%;height:100%;object-fit:cover;display:block;}
+  .hero-visual .tint{position:absolute;inset:0;background:linear-gradient(160deg,rgba(30,80,224,.55),rgba(27,44,130,.35));mix-blend-mode:multiply;}
+  .hero-visual .pmark{position:absolute;left:-6%;bottom:-8%;font-family:'Quicksand';font-weight:700;font-size:340px;color:rgba(255,255,255,.16);line-height:.7;}
+
+  /* ---------- Stat strip ---------- */
+  .stats{background:#fff;padding:64px 0;}
+  .stats h2.kf{text-align:center;color:var(--blue);font-size:34px;font-weight:700;margin-bottom:48px;}
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;}
+  .stat{text-align:center;}
+  .stat .ic{color:var(--blue);margin-bottom:14px;display:flex;justify-content:center;}
+  .stat .num{font-family:'Quicksand';font-weight:700;font-size:40px;color:var(--blue);line-height:1;}
+  .stat .lbl{font-size:16px;color:var(--ink);margin-top:8px;}
+
+  /* ---------- Section base ---------- */
+  section.block{padding:90px 0;}
+  .section-head{text-align:center;max-width:680px;margin:0 auto 56px;}
+  .section-head h2{font-size:40px;color:var(--navy);font-weight:700;margin-bottom:16px;}
+  .section-head p{font-size:18px;color:var(--muted);}
+
+  /* ---------- Steps ---------- */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .step{background:#fff;border-radius:var(--radius);padding:40px 32px;box-shadow:var(--shadow-sm);position:relative;}
+  .step .n{font-family:'Quicksand';font-weight:700;font-size:18px;color:#fff;background:var(--blue);width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:22px;}
+  .step h3{font-size:22px;color:var(--navy);margin-bottom:12px;font-weight:700;}
+  .step p{color:var(--muted);font-size:16px;}
+
+  /* ---------- Benefits ---------- */
+  .benefits{background:#fff;}
+  .bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .bcard{background:var(--bg);border-radius:var(--radius);padding:34px 30px;transition:transform .18s ease,box-shadow .18s ease;}
+  .bcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+  .bcard .ic{width:54px;height:54px;border-radius:13px;background:rgba(30,80,224,.1);color:var(--blue);display:flex;align-items:center;justify-content:center;margin-bottom:20px;}
+  .bcard .tag{font-family:'Quicksand';font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--blue);}
+  .bcard h3{font-size:21px;color:var(--navy);margin:8px 0 10px;font-weight:700;}
+  .bcard p{color:var(--muted);font-size:15.5px;}
+
+  /* ---------- Tiers ---------- */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch;}
+  .tier{background:#fff;border-radius:18px;padding:38px 32px;box-shadow:var(--shadow-sm);border:2px solid transparent;display:flex;flex-direction:column;}
+  .tier.featured{border-color:var(--blue);box-shadow:var(--shadow);position:relative;}
+  .tier .pop{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-family:'Quicksand';font-weight:700;font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:6px 16px;border-radius:20px;}
+  .tier .range{font-size:14px;color:var(--muted);font-weight:600;}
+  .tier h3{font-family:'Quicksand';font-size:26px;color:var(--navy);font-weight:700;margin:6px 0 16px;}
+  .tier .rate{font-family:'Quicksand';font-weight:700;font-size:56px;color:var(--blue);line-height:1;}
+  .tier .rate-lbl{font-size:14px;color:var(--muted);margin-bottom:22px;}
+  .tier ul{list-style:none;margin-bottom:28px;flex:1;}
+  .tier li{font-size:15px;color:var(--ink);padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line);}
+  .tier li:before{content:"";position:absolute;left:0;top:14px;width:16px;height:16px;border-radius:50%;background:rgba(30,80,224,.12);}
+  .tier li:after{content:"";position:absolute;left:5px;top:18px;width:6px;height:3px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg);}
+  .tier .btn{width:100%;}
+  .tier-foot{background:#fff;border-radius:18px;padding:36px;margin-top:28px;text-align:center;box-shadow:var(--shadow-sm);}
+  .tier-foot h3{font-size:26px;color:var(--navy);margin-bottom:10px;font-weight:700;}
+  .tier-foot p{color:var(--muted);max-width:560px;margin:0 auto 22px;}
+
+  /* ---------- Criteria ---------- */
+  .criteria{background:#fff;}
+  .cgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .crit{text-align:center;padding:20px;}
+  .crit .big{font-family:'Quicksand';font-weight:700;font-size:38px;color:var(--blue);line-height:1;}
+  .crit .mid{font-family:'Quicksand';font-weight:600;font-size:16px;color:var(--navy);margin:6px 0 12px;}
+  .crit p{color:var(--muted);font-size:15px;}
+
+  /* ---------- Resources ---------- */
+  .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .res{background:#fff;border-radius:var(--radius);padding:34px 30px;box-shadow:var(--shadow-sm);}
+  .res .num{font-family:'Quicksand';font-weight:700;font-size:14px;color:var(--blue);background:rgba(30,80,224,.1);width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:18px;}
+  .res h3{font-size:20px;color:var(--navy);margin-bottom:10px;font-weight:700;}
+  .res p{color:var(--muted);font-size:15.5px;}
+
+  /* ---------- CTA band ---------- */
+  .cta-band{background:linear-gradient(135deg,var(--navy),var(--blue));border-radius:24px;padding:64px 56px;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
+  .cta-band h2{color:#fff;font-size:36px;font-weight:700;margin-bottom:10px;max-width:560px;}
+  .cta-band p{color:rgba(255,255,255,.85);font-size:17px;max-width:520px;}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff;}
+  .faq-list{max-width:820px;margin:0 auto;}
+  .faq-item{border-bottom:1px solid var(--line);}
+  .faq-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;font-family:'Quicksand';font-weight:600;font-size:19px;color:var(--navy);padding:24px 40px 24px 0;position:relative;display:flex;justify-content:space-between;align-items:center;}
+  .faq-q span.plus{font-size:26px;color:var(--blue);transition:transform .2s ease;}
+  .faq-item.open .faq-q span.plus{transform:rotate(45deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .28s ease;color:var(--muted);font-size:16px;}
+  .faq-a p{padding-bottom:24px;}
+  .faq-item.open .faq-a{max-height:320px;}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy);color:#fff;padding:64px 0 28px;}
+  .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+  .foot-brand .logo .name{color:#fff;}
+  .foot-brand p{color:rgba(255,255,255,.65);font-size:15px;margin-top:18px;max-width:300px;}
+  footer h4{font-family:'Quicksand';font-weight:700;font-size:15px;letter-spacing:.5px;margin-bottom:18px;}
+  footer ul{list-style:none;}
+  footer ul li{margin-bottom:11px;}
+  footer ul a{color:rgba(255,255,255,.7);font-size:15px;}
+  footer ul a:hover{color:#fff;}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.15);padding-top:24px;display:flex;justify-content:space-between;color:rgba(255,255,255,.55);font-size:14px;flex-wrap:wrap;gap:10px;}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:900px){
+    .hero-grid,.foot-grid{grid-template-columns:1fr;}
+    .hero-visual{margin:30px auto 0;}
+    .stat-row,.steps,.bgrid,.tiers,.cgrid,.res-grid{grid-template-columns:1fr 1fr;}
+    .hero h1{font-size:44px;}
+    .nav-links{display:none;}
+    .burger{display:block;}
+    .cta-band{padding:44px 30px;}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 20px;}
+    .stat-row,.steps,.bgrid,.tiers,.cgrid,.res-grid{grid-template-columns:1fr;}
+    .hero h1{font-size:36px;}
+    .section-head h2{font-size:30px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 4 C20 2 36 6 36 20 C36 33 26 38 14 36 C9 35 6 31 6 26 L6 8 C6 6 7 4 8 4 Z" stroke="#1e50e0" stroke-width="2.4" fill="rgba(30,80,224,.06)"/>
+        <rect x="13" y="22" width="4" height="8" rx="1.4" fill="#1b2c82"/>
+        <rect x="19" y="17" width="4" height="13" rx="1.4" fill="#1e50e0"/>
+        <rect x="25" y="12" width="4" height="18" rx="1.4" fill="#1b2c82"/>
+      </svg>
+      <div>
+        <span class="name">Park</span>
+        <span class="sub">CAPITAL</span>
+      </div>
+    </a>
+    <nav class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="#">Apply</a>
+      <a href="#" class="active">Partners</a>
+    </nav>
+    <a href="#join" class="btn btn-primary nav-cta">Become a partner</a>
+    <button class="burger" aria-label="Menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#1b2c82" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <span class="circle c1"></span>
+  <span class="circle c2"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Park Business Capital Partner Program</span>
+      <h1>Turn your network<br>into recurring revenue.</h1>
+      <p class="lead">Refer business owners who need working capital and earn commission on every deal we fund — plus you keep earning every time they renew. You make the introduction; Park Business Capital handles underwriting, funding, and service end to end.</p>
+      <div class="hero-actions">
+        <a href="#join" class="btn btn-primary">Start earning today</a>
+        <a href="#how" class="btn btn-ghost">See how it works</a>
+      </div>
+      <p class="hero-note">No fees to join. No volume commitment. Get approved as a partner in minutes.</p>
+    </div>
+    <div class="hero-visual">
+      <img src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?w=900&q=80" alt="Partner professional" onerror="this.style.display='none'"/>
+      <div class="tint"></div>
+      <div class="pmark">P</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAT STRIP ============ -->
+<section class="stats">
+  <div class="wrap">
+    <h2 class="kf">Why partners choose Park Business Capital</h2>
+    <div class="stat-row">
+      <div class="stat">
+        <div class="ic"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="num">Up to 25%</div>
+        <div class="lbl">commission per funded deal</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></div>
+        <div class="num">Lifetime</div>
+        <div class="lbl">paid on every renewal</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div class="num">Same-day</div>
+        <div class="lbl">funding for your referrals</div>
+      </div>
+      <div class="stat">
+        <div class="ic"><svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h4"/></svg></div>
+        <div class="num">$50K–$10M</div>
+        <div class="lbl">deal sizes we fund</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How the program works</span>
+      <h2>Three steps to your first payout</h2>
+      <p>From sign-up to commission, the process is built to be fast and hands-off for you.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Apply in minutes</h3>
+        <p>Complete a short partner application and get access to your dashboard, referral link, and submission tools. No fees, no commitments.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>Refer &amp; submit</h3>
+        <p>Send clients through your link or hand them off by phone or email. Use our co-branded materials to reach the business owners in your network.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>Get paid</h3>
+        <p>Earn commission on every deal we fund and on every renewal after. Track every lead and payout live, and get paid on a fixed monthly cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFITS ============ -->
+<section class="block benefits">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why partner with us</span>
+      <h2>Everything you need to earn more</h2>
+      <p>We built the program to make referring simple and rewarding — you focus on relationships, we handle the funding.</p>
+    </div>
+    <div class="bgrid">
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1v22M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <span class="tag">Commissions</span>
+        <h3>Industry-leading payouts</h3>
+        <p>Our tiered structure rewards volume with commissions up to 25% per funded deal — paid fast, paid monthly, with zero hidden fees.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg></div>
+        <span class="tag">Dedicated support</span>
+        <h3>Your own account manager</h3>
+        <p>Get paired with a Park Business Capital rep who knows your book and works every submission with you to lift approval rates.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <span class="tag">Speed</span>
+        <h3>Same-day funding</h3>
+        <p>Decisions in hours, not days, and funding the same day when possible. Fast results for your clients mean more referrals back to you.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <span class="tag">Transparency</span>
+        <h3>Live dashboard tracking</h3>
+        <p>See every lead, deal stage, and dollar earned in real time. Clear reporting shows exactly where each referral stands.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg></div>
+        <span class="tag">Payments</span>
+        <h3>Reliable monthly payouts</h3>
+        <p>No chasing checks. Commissions are reconciled and paid on a set schedule via direct deposit — clean, predictable, on time.</p>
+      </div>
+      <div class="bcard">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H4z"/><path d="M2 20h20M9 8l2 2 4-4"/></svg></div>
+        <span class="tag">Resources</span>
+        <h3>Ready-made marketing</h3>
+        <p>Launch fast with co-branded landing pages, email templates, and creatives designed to convert business owners in your network.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMMISSION TIERS ============ -->
+<section class="block" id="commissions">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Commission structure</span>
+      <h2>The more you refer, the more you earn</h2>
+      <p>Move up automatically as your funded volume grows. Every tier pays on new deals and renewals.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <span class="range">1–4 funded deals / mo</span>
+        <h3>Referral Partner</h3>
+        <div class="rate">15%</div>
+        <div class="rate-lbl">commission rate</div>
+        <ul>
+          <li>15% on every funded deal</li>
+          <li>Commission on renewals</li>
+          <li>Partner dashboard access</li>
+          <li>Marketing materials</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#join" class="btn btn-ghost">Get started</a>
+      </div>
+      <div class="tier featured">
+        <span class="pop">Most popular</span>
+        <span class="range">5–9 funded deals / mo</span>
+        <h3>Preferred Partner</h3>
+        <div class="rate">20%</div>
+        <div class="rate-lbl">commission rate</div>
+        <ul>
+          <li>Everything in Referral, plus:</li>
+          <li>20% on every funded deal</li>
+          <li>Priority deal handling</li>
+          <li>Advanced reporting</li>
+          <li>Dedicated account manager</li>
+        </ul>
+        <a href="#join" class="btn btn-primary">Get started</a>
+      </div>
+      <div class="tier">
+        <span class="range">10+ funded deals / mo</span>
+        <h3>Elite Partner</h3>
+        <div class="rate">25%</div>
+        <div class="rate-lbl">commission rate</div>
+        <ul>
+          <li>Everything in Preferred, plus:</li>
+          <li>25% on every funded deal</li>
+          <li>Custom co-marketing</li>
+          <li>Weekly strategy calls</li>
+          <li>Top-of-queue funding</li>
+        </ul>
+        <a href="#join" class="btn btn-ghost">Get started</a>
+      </div>
+    </div>
+    <div class="tier-foot">
+      <h3>Funding a lot of deals?</h3>
+      <p>We build custom arrangements for high-volume partners, ISOs, and enterprise referral sources. Let's design a structure that works for your business.</p>
+      <a href="#join" class="btn btn-primary">Talk to our partner team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ QUALIFICATION CRITERIA ============ -->
+<section class="block criteria">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Client qualification</span>
+      <h2>What makes a fundable referral</h2>
+      <p>Send us business owners who meet these basics and we'll do the rest. Higher-quality submissions earn faster approvals.</p>
+    </div>
+    <div class="cgrid">
+      <div class="crit">
+        <div class="big">1 Year+</div>
+        <div class="mid">in business</div>
+        <p>Operating for at least 12 months with verifiable history.</p>
+      </div>
+      <div class="crit">
+        <div class="big">525+</div>
+        <div class="mid">FICO score</div>
+        <p>Owner's personal credit score of 525 or higher.</p>
+      </div>
+      <div class="crit">
+        <div class="big">$200K+</div>
+        <div class="mid">annual revenue</div>
+        <p>Minimum $200,000 in gross annual revenue.</p>
+      </div>
+      <div class="crit">
+        <div class="big">Active</div>
+        <div class="mid">business checking</div>
+        <p>An open business checking account in good standing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARKETING RESOURCES ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Marketing resources</span>
+      <h2>Tools to promote funding to your network</h2>
+      <p>Everything you need to put working capital in front of the right business owners.</p>
+    </div>
+    <div class="res-grid">
+      <div class="res">
+        <div class="num">01</div>
+        <h3>Co-branded landing pages</h3>
+        <p>Custom pages carrying your company's identity to capture and convert business-owner leads seamlessly.</p>
+      </div>
+      <div class="res">
+        <div class="num">02</div>
+        <h3>Marketing campaigns</h3>
+        <p>Ready-to-send email sequences, ad creatives, and social assets tailored to your audience and ready to deploy.</p>
+      </div>
+      <div class="res">
+        <div class="num">03</div>
+        <h3>Embedded application</h3>
+        <p>Drop our funding application directly into your site for a fully branded, white-label experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA BAND / JOIN ============ -->
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Join the Park Business Capital partner network</h2>
+        <p>Ready to start earning while helping businesses grow? Apply now and our partner team will reach out within 48 hours.</p>
+      </div>
+      <a href="#" class="btn btn-white">Apply to become a partner</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="block faq" id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <p>Common questions about the partner program and how payouts work.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How do I apply to become a partner?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Apply through the form above or email our partner team. We review every application and respond within 48 hours with your next steps and dashboard access.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How does referral tracking work?<span class="plus">+</span></button>
+        <div class="faq-a"><p>We use a 30-day cookie window. If a business owner visits through your link and returns within 30 days — even directly — the lead is still credited to you. You can also submit referrals manually by phone or email.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">When and how do I get paid?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Commissions are reconciled and paid monthly by direct deposit once a referred deal funds and clears the holding period. Your dashboard shows pending and paid amounts in real time.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I earn commission on renewals?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Yes. You earn on the original funding and again every time your referred client renews — building ongoing income for as long as they keep working with Park Business Capital.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Will I have support on my submissions?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Preferred and Elite partners are paired with a dedicated account manager who works each submission with you to improve approval rates and speed up funding.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Are there any clawbacks?<span class="plus">+</span></button>
+        <div class="faq-a"><p>Commissions may be reversed if a funded deal defaults within the first 30 days. Full terms are provided in your partner agreement.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg class="mark" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 4 C20 2 36 6 36 20 C36 33 26 38 14 36 C9 35 6 31 6 26 L6 8 C6 6 7 4 8 4 Z" stroke="#ffffff" stroke-width="2.4" fill="rgba(255,255,255,.06)"/>
+            <rect x="13" y="22" width="4" height="8" rx="1.4" fill="#fff"/>
+            <rect x="19" y="17" width="4" height="13" rx="1.4" fill="#a9c0ff"/>
+            <rect x="25" y="12" width="4" height="18" rx="1.4" fill="#fff"/>
+          </svg>
+          <div><span class="name">Park</span><span class="sub" style="color:#a9c0ff">CAPITAL</span></div>
+        </div>
+        <p>Working capital from $50K to $10M for small businesses — and a partner program that pays you to help them grow.</p>
+      </div>
+      <div>
+        <h4>Program</h4>
+        <ul>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#commissions">Commissions</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#join">Apply now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Apply</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">partners@parkbusinesscapital.com</a></li>
+          <li><a href="#">Miami, Florida</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Park Business Capital. All rights reserved.</span>
+      <span>Privacy Policy · Terms of Use</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(function(b){
+    b.addEventListener('click',function(){
+      var item=b.parentElement;
+      var open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!open) item.classList.add('open');
+    });
+  });
+</script>
+</body>
+</html>
